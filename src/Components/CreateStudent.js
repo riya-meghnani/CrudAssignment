@@ -21,11 +21,11 @@ function setValue(e){
    
 }
     function sendDetails(){
-        alert(question);
-        alert(answer);
+        
             var s={
         question,answer
             }
+            if(question.length>0 && answer.length>0){
         if(Id){
             s._id=Id
             axios.post('http://localhost:3000/update-faq',s).then((res)=>{
@@ -45,7 +45,12 @@ function setValue(e){
                 
             })
         }
-            
+        
+    }  
+    else{
+        alert("enter all the inputs")
+        
+    } 
         
         }
     return (
